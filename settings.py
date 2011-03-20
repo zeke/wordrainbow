@@ -1,5 +1,12 @@
 # Django settings for wordrainbow project.
 
+import os
+PROJECT_DIR = os.path.dirname(__file__)
+STATIC_DOC_ROOT = os.path.join(PROJECT_DIR, "static")
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_DIR, "templates"),
+)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -76,12 +83,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'wordrainbow.urls'
-
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
 
 INSTALLED_APPS = (
     # 'django.contrib.auth',

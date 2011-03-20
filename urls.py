@@ -5,6 +5,7 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^$', 'play.views.index'),
     # Example:
     # (r'^wordrainbow/', include('wordrainbow.foo.urls')),
 
