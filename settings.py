@@ -1,6 +1,5 @@
-# Django settings for wordrainbow project.
-
 import os
+
 PROJECT_DIR = os.path.dirname(__file__)
 STATIC_DOC_ROOT = os.path.join(PROJECT_DIR, "static")
 TEMPLATE_DIRS = (
