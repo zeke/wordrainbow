@@ -1,11 +1,15 @@
 from django.conf.urls.defaults import *
+from wordnik import Wordnik
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
+
+w = Wordnik(api_key="1d3baf57f57254b5c430200e729037e9dea9d87493f3a16b4")
 urlpatterns = patterns('',
-    (r'^$', 'play.views.index'),
+    (r'^(?P<mode>.*)/$', 'play.views.index', { "w": w } ),
+    #(r'^mix$', 'play.mix.index', { "w": w } ),
     # Example:
     # (r'^wordrainbow/', include('wordrainbow.foo.urls')),
 
