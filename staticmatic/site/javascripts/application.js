@@ -17,10 +17,9 @@ $(document).ready(function(){
 	// 	$("#content").hide().removeClass('invisible').fadeIn(3000);		
 	// }
 	
-	adaptToScale();
+	adaptToScale();	
+	setTimeout("adaptToScale()", 250);
 	
-	
-
 });
 
 
@@ -64,13 +63,18 @@ function adaptToScale() {
 			left: $(window).width()/2 - $('#footer').outerWidth()/2,
 			bottom: 0
 		});
-		// $('ul#panels > li.home a').css({
-		// 	left: $('ul#panels > li.home').outerWidth() - $('li.home a').width()/2
-		// });		
+		
+		$('li.home a').css({
+			left: $('li.home').outerWidth()/2 - $('li.home a').width()/2,
+			top: $('li.home').outerHeight()/2 - $('li.home a').height()/2
+		});		
+		
+		// Adjust panel arrangment without using animation
 		Panel.switchTo(current_panel, true);
 }
 
 Panel = {
+	
 	switchTo: function(panel_name, instant){
 		current_panel = panel_name;
 		
@@ -96,8 +100,8 @@ Panel = {
 		} else {
 			$('#panels').animate(
 				{left: -$(window).width()*offset},
-				"normal",
-				'easeOutCubic',
+				"slow",
+				'easeOutBounce',
 				function() {
 				}
 			);
