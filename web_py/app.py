@@ -12,7 +12,7 @@ urls = (
     '/identify',    'Identify',
     '/visualize',   'Visualize',
     '/play',        'Play',
-    '/',            'Index',
+    '/(.*)',        'Index',
 )
 
 
@@ -101,9 +101,13 @@ class Visualize(object):
         user_data = web.input()
 
 class Index(object):
-    def GET(self):
-        return "Index.Htm"
-
+    def GET(self, f):
+        if not f:
+            f = "index.html"
+        try:
+            return open(f).read()
+        except:
+            return "Sorry, can't find that page"
 class count(object):
     def GET(self, name):
         session.count += 1
