@@ -109,10 +109,43 @@ body
 				color: black
 				font-size: 3em
 			&.home
+				visibility: hidden
 				background: none
 				a.logo
 					display: block
 					position: absolute
+					
+			&.mix
+				div.swatch
+					position: absolute
+					width: 100px
+					height: 100px
+					background-color: blue
+					@include border_top_radius(5px)
+				ul#sliders
+					@include no_float
+					position: absolute
+					padding: 10px 5px 15px 10px
+					//background-color: red
+					list-style: none					
+					li
+						@include float_left
+						margin: 0 20px 0 0
+						width: 120px
+						&.ui-slider-horizontal
+							height: .4em
+						&.ui-slider-horizontal .ui-slider-handle
+							top: -.5em
+						&.ui-widget-content
+							background: #CCC
+							border: none
+						&.ui-state-default, &.ui-widget-content .ui-state-default, &.ui-widget-header .ui-state-default
+							background: #CCC
+							border: none
+							cursor: pointer
+							@include border-radius(5px)
+						a
+							outline: none
 
 				
 ul#footer

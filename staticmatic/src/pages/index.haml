@@ -11,11 +11,18 @@
 		= link_to_function(img('logo.png'), "Panel.switchTo('identify')", :class => "logo")
 
 	%li.identify
+
 	
 		Identify
 	
 	%li.mix
-		Mix
+	
+		%div.swatch
+	
+		%ul#sliders
+			%li#hue_slider
+			%li#saturation_slider
+			%li#lightness_slider
 	
 	%li.visualize
 		Visualize
