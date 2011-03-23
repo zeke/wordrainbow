@@ -2,30 +2,29 @@ $(document).ready(function(){
 	
 	panel_width = 800;
 	panel_height = 400;
+	panel_padding = 5;
 	panels = new Array('home', 'identify', 'mix', 'visualize');
 	current_panel = panels[0];
-	// Load typekit, then reveal content..
-	// try {
-	// 	Typekit.load({
-	// 	  active: function() {
-	// 			$(window).resize();
-	// 			$("#content").hide().removeClass('invisible').fadeIn(3000);
-	// 	  }
-	// 	});
-	// } catch(e) {
-	// 	$(window).resize();
-	// 	$("#content").hide().removeClass('invisible').fadeIn(3000);		
-	// }
-	
+		
 	adaptToScale();	
 	setTimeout("adaptToScale()", 250);
+	setTimeout("showHome()", 300);
 	
+	// $("ul#sliders li").slider();
+	
+	Mixer.initSliders();
+
 });
 
 
 $(window).resize(function() {
 	adaptToScale();
 });
+
+function showHome() {
+	$('li.home').css({visibility:'visible',display:'none'});	
+	$('li.home').fadeIn(1500);
+}
 
 function adaptToScale() {
 	
@@ -64,13 +63,30 @@ function adaptToScale() {
 			bottom: 0
 		});
 		
+		// Adjust panel arrangment without using animation
+		Panel.switchTo(current_panel, true);
+
+		// HOME
+		// **********************************************************		
 		$('li.home a').css({
 			left: $('li.home').outerWidth()/2 - $('li.home a').width()/2,
 			top: $('li.home').outerHeight()/2 - $('li.home a').height()/2
-		});		
+		});
+
+		// MIX
+		// **********************************************************
+		$('li.mix div.swatch').css({
+			left: panel_padding,
+			top: panel_padding,
+			height: panel_height - (panel_padding*2) - $('li.mix ul#sliders').outerHeight(),
+			width: panel_width - (panel_padding*2)
+		});
+
+		$('li.mix ul#sliders').css({
+			bottom: 0,
+			left: 0
+		});
 		
-		// Adjust panel arrangment without using animation
-		Panel.switchTo(current_panel, true);
 }
 
 Panel = {
@@ -101,7 +117,7 @@ Panel = {
 			$('#panels').animate(
 				{left: -$(window).width()*offset},
 				"slow",
-				'easeOutBounce',
+				'easeInOutCubic',
 				function() {
 				}
 			);
@@ -109,6 +125,38 @@ Panel = {
 
 
 	}
+};
+
+Mixer = {
+	hue: 500,
+	saturation: 500,
+	lightness: 500,
+	
+	initSliders: function() {
+		$("#hue_slider").slider({
+			max:1000,
+			value: 500,
+			slide: function(event, ui) { Mixer.hue = ui.value; Mixer.readSliderValues(); }
+		});
+		$("#saturation_slider").slider({
+			max:1000,			
+			value: 500,
+			slide: function(event, ui) { Mixer.saturation = ui.value; Mixer.readSliderValues(); }
+		});
+		$("#lightness_slider").slider({
+			max:1000,
+			value: 500,
+			slide: function(event, ui) { Mixer.lightness = ui.value; Mixer.readSliderValues(); }
+		});
+		
+		Mixer.readSliderValues();
+	},
+	
+	readSliderValues: function() {
+		var color = $.Color( [Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'HSV' ).toHEX();
+		$('li.mix div.swatch').css({backgroundColor:color});
+	}
+	
 };
 
 // Logging function that accounts for browsers that don't have window.console

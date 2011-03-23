@@ -7,7 +7,6 @@ albescent
 albicant
 albino
 albugineous
-
 alizarin
 almond
 amaranth
@@ -27,7 +26,6 @@ aubergine
 auburn
 aureolin
 aurulent
-
 azure
 baby blue
 banana
@@ -44,7 +42,6 @@ blond
 blonde
 blood
 blue
-
 blueberry
 blush
 bondi blue
@@ -70,7 +67,6 @@ cafe au lait
 camel
 canary yellow
 candy-apple red
-
 cardinal
 carmine
 carnation pink
@@ -84,11 +80,9 @@ cerise
 cerulean
 champagne
 charcoal
-
 chartreuse
 cherry
 chestnut
-
 chocolate
 chrysochlorous
 cimmaron
@@ -104,13 +98,11 @@ claret
 clay
 coal
 cobalt
-
 coccineous
 cochineal
 cocoa
 coffee
 columbine
-
 copper
 coquelicot
 coral
@@ -129,9 +121,6 @@ damask
 dandelion
 denim
 dingy
-
-
-
 dun
 dusky
 ebony
@@ -139,9 +128,7 @@ eburnean
 ecru
 eggplant
 eggshell
-
 emerald
-
 erythraean
 ferruginous
 filemot
@@ -173,7 +160,6 @@ greige
 grey
 gridelin
 griseous
-
 gunmetal
 haematic
 hansa yellow
@@ -185,7 +171,6 @@ henna
 hoary
 honey
 honeydew
-
 hot pink
 ichor
 icterine
@@ -203,14 +188,11 @@ kermes
 khaki
 kiwi
 klein blue
-
-
 lavender
 lazuline
 lead
 leaf green
 lemon
-
 lilac
 lime
 linen
@@ -218,7 +200,6 @@ liver
 loden
 lurid
 magenta
-
 mahogany
 maize
 marmoreal
