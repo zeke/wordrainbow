@@ -10,3 +10,5 @@ Discoveries
 * WordLists cannot be sorted
 * WordList items cannot contain metadata
 * The documentation for word.{format}/{word}/tag is lacking
+* can't tag a word more than once with the same tag (?)
+* can't get tags for a word

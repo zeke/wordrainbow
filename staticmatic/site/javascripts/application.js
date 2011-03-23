@@ -187,7 +187,7 @@ Mixer = {
 		var q = first_time ? 'callback=?' : $('li.mix form').serialize();
 		var url = base_url + '/mix?' + q;
 
-		var url = "http://google.com";
+		var url = "http://localhost:8080/mix?callback=?";
 		
 		log("url: " + url);
 		
