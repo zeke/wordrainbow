@@ -67,6 +67,8 @@ body
 			text-decoration: none
 			font-weight: bold
 			font-size: 2em
+			span
+				color: #666
 			
 	ul#nav
 		display: none
@@ -74,7 +76,7 @@ body
 		position: absolute
 		z-index: 3
 		margin: 0
-		padding: 0 0 15px 0
+		padding: 0 0 15px 0px
 		li
 			border: none
 			a
@@ -106,9 +108,12 @@ body
 			h1
 				color: black
 				font-size: 3em
-			a.logo
-				display: block
-				position: relative
+			&.home
+				background: none
+				a.logo
+					display: block
+					position: absolute
+
 				
 ul#footer
 	@include horizontal_list
