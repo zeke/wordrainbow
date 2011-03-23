@@ -1,18 +1,20 @@
 $(document).ready(function(){
 	
+	base_url = "http://henrietta.local:8080";
+	
 	panel_width = 800;
 	panel_height = 400;
 	panel_padding = 5;
 	panels = new Array('home', 'identify', 'mix', 'visualize');
 	current_panel = panels[0];
+	
+	swatch_height = 300;
 		
 	adaptToScale();	
 	setTimeout("adaptToScale()", 250);
 	setTimeout("showHome()", 300);
 	
-	// $("ul#sliders li").slider();
-	
-	Mixer.initSliders();
+	Mixer.init();
 
 });
 
@@ -78,13 +80,23 @@ function adaptToScale() {
 		$('li.mix div.swatch').css({
 			left: panel_padding,
 			top: panel_padding,
-			height: panel_height - (panel_padding*2) - $('li.mix ul#sliders').outerHeight(),
+			height: swatch_height,
 			width: panel_width - (panel_padding*2)
 		});
 
 		$('li.mix ul#sliders').css({
-			bottom: 0,
+			top: $('li.mix div.swatch').outerHeight(),
 			left: 0
+		});
+		
+		$('li.mix ul#slider_labels').css({
+			top: $('li.mix ul#sliders').position().top + $('li.mix ul#sliders').outerHeight(),
+			left: 0
+		});
+		
+		$('li.mix form').css({
+			top: $('li.mix div.swatch').outerHeight(),
+			right: 0
 		});
 		
 }
@@ -93,11 +105,11 @@ Panel = {
 	
 	switchTo: function(panel_name, instant){
 		current_panel = panel_name;
-		
+		var offset = panels.indexOf(panel_name);
+				
+		// Highlight active nav item
 		$('#nav a').removeClass('active');
 		$('#nav a.'+panel_name).addClass('active');
-		
-		var offset = panels.indexOf(panel_name);
 		
 		// zero is the home panel
 		// so turn off the nav'n stuff
@@ -132,29 +144,72 @@ Mixer = {
 	saturation: 500,
 	lightness: 500,
 	
-	initSliders: function() {
+	init: function() {
 		$("#hue_slider").slider({
 			max:1000,
 			value: 500,
-			slide: function(event, ui) { Mixer.hue = ui.value; Mixer.readSliderValues(); }
+			slide: function(event, ui) { Mixer.hue = ui.value; Mixer.updateSwatch(); }
 		});
 		$("#saturation_slider").slider({
 			max:1000,			
 			value: 500,
-			slide: function(event, ui) { Mixer.saturation = ui.value; Mixer.readSliderValues(); }
+			slide: function(event, ui) { Mixer.saturation = ui.value; Mixer.updateSwatch(); }
 		});
 		$("#lightness_slider").slider({
 			max:1000,
 			value: 500,
-			slide: function(event, ui) { Mixer.lightness = ui.value; Mixer.readSliderValues(); }
+			slide: function(event, ui) { Mixer.lightness = ui.value; Mixer.updateSwatch(); }
 		});
 		
-		Mixer.readSliderValues();
+		// Initialization
+		Mixer.updateSwatch();
+		
+		// Fetch initial suggestion
+		Mixer.submit(true);
+		
+		// Define form submission behavior
+		$("li.mix form").submit(function(){
+			Mixer.submit();
+			return false;
+		});
+		
 	},
 	
-	readSliderValues: function() {
+	// Called at runtime and each time a slider is moved
+	updateSwatch: function() {
 		var color = $.Color( [Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'HSV' ).toHEX();
+		$('li.mix form input.hex').val(color);
 		$('li.mix div.swatch').css({backgroundColor:color});
+	},
+	
+	submit: function(first_time) {
+		// When getting the first mix suggestion, we don't pass any vars
+		var q = first_time ? 'callback=?' : $('li.mix form').serialize();
+		var url = base_url + '/mix?' + q;
+
+		var url = "http://google.com";
+		
+		log("url: " + url);
+		
+		// $.getJSON(url, function(data) {
+		// 	log("chicken");
+		// 	Mixer.handleResponse(data);
+		// });
+		
+		$.ajax({
+			url: url,
+			type: "GET",
+			cache: false,
+			success: function (response) {
+				log('blah');
+			}
+		});
+		
+		return true;
+	},
+	
+	handleResponse: function(response) {
+		log("response: " + response);
 	}
 	
 };

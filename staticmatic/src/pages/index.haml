@@ -18,11 +18,21 @@
 	%li.mix
 	
 		%div.swatch
+
+		%ul#slider_labels
+			%li Hue
+			%li Saturation
+			%li Lightness
 	
 		%ul#sliders
 			%li#hue_slider
 			%li#saturation_slider
 			%li#lightness_slider
+			
+		%form
+			%input{:name => "hex", :type => "text", :class => "hex"}
+			%input{:name => "name", :type => "text", :class => "name"}
+			%input{:type => "submit", :class => "submit", :value => "Save"}
 	
 	%li.visualize
 		Visualize

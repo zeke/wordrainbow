@@ -116,16 +116,28 @@ body
 					position: absolute
 					
 			&.mix
+				background: none
 				div.swatch
 					position: absolute
 					width: 100px
 					height: 100px
 					background-color: blue
-					@include border_top_radius(5px)
+					@include border_radius(5px)
+					border: 5px solid white
+				ul#slider_labels
+					@include horizontal_list
+					position: absolute
+					margin: 0
+					padding: 0 0 0 10px
+					li
+						color: #999
+						border: none
+						width: 120px
+						text-align: center
 				ul#sliders
 					@include no_float
 					position: absolute
-					padding: 10px 5px 15px 10px
+					padding: 20px 0 10px 10px
 					//background-color: red
 					list-style: none					
 					li
@@ -146,6 +158,23 @@ body
 							@include border-radius(5px)
 						a
 							outline: none
+				form
+					@include no_float
+					position: absolute
+					input.name
+						background: none
+						border: none
+						outline: none
+						color: white
+					input.submit
+						font-size: 1.2em
+						padding: 3px
+						@include border-radius(3px)
+						color: white
+						background-color: #333
+						border: 1px solid #666
+						
+						
 
 				
 ul#footer
