@@ -1,57 +1,57 @@
-adobe
-almond
-amber
-aqua
-aquamarine
-azure
-baby blue
-beet red
-beige
-blond
-blue
-burgundy
-chartreuse
+emerald
 cherry
-coal
-cobalt
 coffee
 cream
-crimson
-cyan
-emerald
-forest green
-fuchsia
-fuschia
+almond
 gold
-grass green
-gray
+kiwi
 green
+grass green
+aquamarine
+beet red
+sepia
+cyan
+purple
+adobe
+plum
+tan
+blond
+lime
 green blue
 greige
-grey
-hazel
-indigo
-ivory
-jade green
-kiwi
-lemon yellow
-lime
-maroon
 mauve
 mint green
-mustard
-navy blue
-olive green
-orange
-peach
-pine green
-pink
-plum
-purple
-red
+jade green
 rose
-royal blue
+pine green
+cobalt
+blue
 sage
-sepia
-tan
+amber
+aqua
+olive green
+gray
+ivory
+lemon yellow
+beige
 yellow
+grey
+orange
+forest green
+navy blue
+burgundy
+indigo
+royal blue
+fuchsia
+chartreuse
+baby blue
+fuschia
+pink
+coal
+peach
+crimson
+azure
+maroon
+hazel
+mustard
+red

@@ -9,3 +9,4 @@ Discoveries
 * Public users don't have access to tagging of any kind
 * WordLists cannot be sorted
 * WordList items cannot contain metadata
+* The documentation for word.{format}/{word}/tag is lacking
