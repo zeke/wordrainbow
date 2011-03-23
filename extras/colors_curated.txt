@@ -1,0 +1,57 @@
+adobe
+almond
+amber
+aqua
+aquamarine
+azure
+baby blue
+beet red
+beige
+blond
+blue
+burgundy
+chartreuse
+cherry
+coal
+cobalt
+coffee
+cream
+crimson
+cyan
+emerald
+forest green
+fuchsia
+fuschia
+gold
+grass green
+gray
+green
+green blue
+greige
+grey
+hazel
+indigo
+ivory
+jade green
+kiwi
+lemon yellow
+lime
+maroon
+mauve
+mint green
+mustard
+navy blue
+olive green
+orange
+peach
+pine green
+pink
+plum
+purple
+red
+rose
+royal blue
+sage
+sepia
+tan
+yellow

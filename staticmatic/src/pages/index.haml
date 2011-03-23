@@ -1,0 +1,28 @@
+%div#logo= link_to_function("wordrainbow", "Panel.switchTo('home')")
+
+%ul#nav
+	%li.identify= link_to_function("Identify.", "Panel.switchTo('identify')", :class => 'identify')
+	%li.mix= link_to_function("Mix.", "Panel.switchTo('mix')", :class => 'mix')
+	%li.visualize= link_to_function("Visualize.", "Panel.switchTo('visualize')", :class => 'visualize')
+		
+%ul#panels
+	
+	%li.home
+		= link_to_function(img('rainbow.gif'), "Panel.switchTo('identify')", :class => 'identify')
+
+	%li.identify
+	
+		Identify
+	
+	%li.mix
+		Mix
+	
+	%li.visualize
+		Visualize
+		
+%ul#footer
+	%li
+		Powered by 
+		= link('@wordnik', "http://twitter.com/wordnik")
+		and the
+		= link('@wordnikapi', "http://twitter.com/wordnikapi")

@@ -1,0 +1,10 @@
+!!! 5
+%html
+	%head
+		%title word rainbow dot com
+		=# stylesheets 'blueprint_screen', 'application'
+		<link href="stylesheets/blueprint_screen.css" media="all" rel="stylesheet" type="text/css">
+		<link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css">
+		= javascripts 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', 'jquery-ui-1.8.10.custom.min', 'application'
+	%body
+		= yield

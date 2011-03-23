@@ -1,0 +1,404 @@
+adobe
+aegean
+aeneous
+aithochrous
+alabaster
+albescent
+albicant
+albino
+albugineous
+
+alizarin
+almond
+amaranth
+amaranthine
+amber
+amethyst
+antique white
+apricot
+aqua
+aquamarine
+argent
+ash
+ashen
+asparagus
+atrous
+aubergine
+auburn
+aureolin
+aurulent
+
+azure
+baby blue
+banana
+battleship gray
+beet
+beige
+berry
+beryl
+bisque
+bistre
+bittersweet
+black
+blond
+blonde
+blood
+blue
+
+blueberry
+blush
+bondi blue
+bone
+brass
+brick
+bronze
+brown
+brunneous
+bubblegum
+buff
+burgundy
+burnet
+burnt orange
+burnt sienna
+burnt umber
+cacholong
+cadet blue
+cadmium red
+cadmium yellow
+caesious
+cafe au lait
+camel
+canary yellow
+candy-apple red
+
+cardinal
+carmine
+carnation pink
+carnelian
+carrot
+carrot orange
+castaneous
+castory
+celadon
+cerise
+cerulean
+champagne
+charcoal
+
+chartreuse
+cherry
+chestnut
+
+chocolate
+chrysochlorous
+cimmaron
+cinereous
+cinereus
+cinerious
+cinnabar
+cinnamon
+citreous
+citrine
+citron
+claret
+clay
+coal
+cobalt
+
+coccineous
+cochineal
+cocoa
+coffee
+columbine
+
+copper
+coquelicot
+coral
+corbeau
+cornflower
+cornflower blue
+cosmic latte
+cramoisy
+cranberry
+cream
+crimson
+croceate
+cyan
+cyaneous
+damask
+dandelion
+denim
+dingy
+
+
+
+dun
+dusky
+ebony
+eburnean
+ecru
+eggplant
+eggshell
+
+emerald
+
+erythraean
+ferruginous
+filemot
+flamingo
+flavescent
+flax
+flaxen
+flesh
+forest
+fuchsia
+fuliginous
+fuschia
+gamboge
+garnet
+geoluhread
+geranium
+glaucous
+gold
+golden yellow
+goldenrod
+granite
+granny smith
+graphite
+grass
+grasshopper
+gray
+green
+greige
+grey
+gridelin
+griseous
+
+gunmetal
+haematic
+hansa yellow
+harlequin
+hazel
+heather
+heliotrope
+henna
+hoary
+honey
+honeydew
+
+hot pink
+ichor
+icterine
+icteritious
+incarnadine
+indian red
+indian yellow
+indigo
+infuscate
+isabelline
+ivory
+jade
+kelly
+kermes
+khaki
+kiwi
+klein blue
+
+
+lavender
+lazuline
+lead
+leaf green
+lemon
+
+lilac
+lime
+linen
+liver
+loden
+lurid
+magenta
+
+mahogany
+maize
+marmoreal
+maroon
+mauve
+mazarine
+melanic
+melon
+midnight
+midnight blue
+milk
+mint
+mocha
+mordant red
+morel
+moss green
+mountbatten pink
+mulberry
+murrey
+mustard
+nacre
+naples yellow
+napthol red
+navy
+navy blue
+neon blue
+nigricant
+niveous
+obsidian
+ocean
+ochre
+ochroleucous
+olive
+olive green
+onyx
+orange
+orange red
+orange yellow
+orchid
+oxblood
+pale
+pallid
+paprika
+pastel
+patina
+pavonated
+payne's gray
+payne's grey
+peach
+pear
+pearl
+pearl pink
+periwinkle
+perse
+persimmon
+pewter
+phoeniceous
+piceous
+piebald
+pine
+pine green
+pink
+platinum
+plum
+plumbeous
+pomegranate
+powder blue
+prussian blue
+puce
+pumpkin
+puniceous
+purple
+purpureal
+pyrrhous
+quinacridone magenta
+raisin
+raspberry
+raven
+raw goggin
+raw sienna
+raw umber
+red
+red violet
+rhodopsin	
+roan
+robin's egg blue
+rose
+roseate
+royal blue
+rubicund
+rubiginous
+rubious
+ruby
+rufous
+russet
+rust
+safety orange
+saffron
+sage
+sallow
+salmon
+sand
+sangria
+sanguine
+sanguineous
+sap green
+sapphire
+sarcoline
+sard
+scarlet
+sea foam
+sea green
+seafoam
+seashell
+sepia
+shamrock
+sienna
+silver
+sinopia
+sky
+sky blue
+slate
+smalt
+smaragdine
+smoke
+snow
+solferino
+soot
+sorrel
+spring green
+steel
+steel blue
+stil de grain brown
+strawberry
+sulphureous
+sunflower
+sunshine
+swarthy
+tan
+tangerine
+taupe
+tawny
+tea
+teal
+terra cotta
+terracotta
+thalo blue
+thistle
+titanium white
+titian
+tomato
+topaz
+turquoise
+turquoise blue
+turquoise tangerine
+ultramarine
+umber
+van dyke brown
+vanilla
+verdigris
+vermeil
+vermilion
+vermillion
+vinaceous
+violet
+violet blue
+violet red
+virescent
+viridian
+walnut
+wheat
+white
+wine
+wisteria
+xanadu
+xanthous
+yellow
+yellow green
+yellow orange
+yellowish
+zinc white
+zinnober
+zinnwaldite
