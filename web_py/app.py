@@ -76,8 +76,11 @@ class Identify(object):
             session.identifying = True
             l = hexen
             random.shuffle(l)
-            l.remove("#000")
-            l.remove("#FFF")
+            try:
+                l.remove("#000")
+                l.remove("#FFF")
+            except:
+                pass
             session.hexen = ",".join(l)
             session.identifying = True
             raise web.seeother('/identify')
