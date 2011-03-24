@@ -10,6 +10,15 @@ a rake task to copy static files from /staticmatic/site to /web_py/
 Wishlist
 --------
 
+* Fix /identify and /mix so the tag words again
+* Deploy the site somewhere
+* Set up DNS for wordrainbow.com
+
+* Design and build "Identify" section
+* Improve transition/visualization between player submissions
+* Design and build "Visualize" section
+* Look into physics
+
 * Remove sensitive stuff from the app so it can be open-sourced
 
 Discoveries
