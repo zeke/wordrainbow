@@ -1,7 +1,5 @@
 $(document).ready(function(){
 	
-	base_url = "http://henrietta.local:8080";
-	
 	panel_width = 800;
 	panel_height = 400;
 	panel_padding = 5;
@@ -184,32 +182,19 @@ Mixer = {
 	
 	submit: function(first_time) {
 		// When getting the first mix suggestion, we don't pass any vars
-		var q = first_time ? 'callback=?' : $('li.mix form').serialize();
-		var url = base_url + '/mix?' + q;
-
-		var url = "http://localhost:8080/mix?callback=?";
+		var q = first_time ? '' : $('li.mix form').serialize();
+		var url = '/mix?' + q + '&callback=?';
 		
-		log("url: " + url);
-		
-		// $.getJSON(url, function(data) {
-		// 	log("chicken");
-		// 	Mixer.handleResponse(data);
-		// });
-		
-		$.ajax({
-			url: url,
-			type: "GET",
-			cache: false,
-			success: function (response) {
-				log('blah');
-			}
+		$.getJSON(url, function(data) {
+			Mixer.handleResponse(data);
 		});
-		
-		return true;
 	},
 	
 	handleResponse: function(response) {
-		log("response: " + response);
+		log(response);
+		$('li.mix form input.name').val(response.nextName);
+		$('li.mix form input.hex').val('');
+		log("response.tagsForQuery: " + response.tagsForQuery);
 	}
 	
 };

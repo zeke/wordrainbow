@@ -196,6 +196,7 @@ body ul#panels > li.mix form input.name {
   border: none;
   outline: none;
   color: white;
+  font-size: 1.2em;
 }
 body ul#panels > li.mix form input.submit {
   font-size: 1.2em;

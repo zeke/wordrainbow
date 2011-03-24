@@ -1,8 +1,11 @@
 Setup
 -----
 
-* Run `./staticmatic/rake build` to build the static site and copy it over to ./web_py
+The static portion of the site is built with ruby's staticmatic.
+Staticmatic doesn't let you configure the output directory, so we're using 
+a rake task to copy static files from /staticmatic/site to /web_py/
 
+	./staticmatic/rake build
 
 Wishlist
 --------

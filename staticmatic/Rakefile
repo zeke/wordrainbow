@@ -9,13 +9,9 @@ task :build do
   
   puts "- Remove old build from web_py"
   system "rm ../web_py/index.html"
-  system "rm -rf ../web_py/images"
-  system "rm -rf ../web_py/javascripts"
   system "rm -rf ../web_py/stylesheets"
   
   puts "- Copy new build from web_py"
   system "cp -R site/index.html ../web_py/"
-  system "cp -R site/images ../web_py/"
-  system "cp -R site/javascripts ../web_py/"
   system "cp -R site/stylesheets ../web_py/"
 end
