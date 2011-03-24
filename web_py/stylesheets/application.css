@@ -102,20 +102,6 @@ body ul#panels > li.home a.logo {
 body ul#panels > li.mix {
   background: none;
 }
-body ul#panels > li.mix input.name {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-  border: 5px solid white;
-  margin: 0 0 30px 0;
-}
 body ul#panels > li.mix ul#slider_labels {
   float: none;
   clear: both;
@@ -145,7 +131,6 @@ body ul#panels > li.mix ul#slider_labels li {
   color: #999999;
   border: none;
   width: 120px;
-  text-align: center;
 }
 body ul#panels > li.mix ul#sliders {
   float: none;
@@ -191,18 +176,27 @@ body ul#panels > li.mix form {
   clear: both;
   overflow: hidden;
   position: absolute;
+  left: 0;
+  top: 0;
 }
 body ul#panels > li.mix form input.name {
+  display: block;
+  position: relative;
   background: none;
   border: none;
   outline: none;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  margin: 0;
+  padding: 40px 0 0 0;
+  font-size: 10em;
+  font-weight: bold;
   color: white;
-  font-size: 1.5em;
 }
 body ul#panels > li.mix form input.submit {
   font-family: "Helvetica Neue", Helvetica, Arial;
   font-weight: bold;
   font-size: 1.2em;
+  margin: 80px 0 0 15px;
   padding: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -212,7 +206,8 @@ body ul#panels > li.mix form input.submit {
   border-radius: 3px;
   color: white;
   background-color: #333333;
-  border: 1px solid #444444;
+  border: none;
+  cursor: pointer;
 }
 
 ul#footer {
