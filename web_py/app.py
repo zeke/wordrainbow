@@ -15,7 +15,7 @@ urls = (
     '/(.*)',        'Index',
 )
 
-
+alnum = map(chr, range(97, 123)) + [str(n) for n in range(0,10)]
 KEY="d92d8109432f0ead8000707303d0c6849e23be119a18df853"
 # w = Wordnik(api_key="1d3baf57f57254b5c430200e729037e9dea9d87493f3a16b4",username="wordrainbow",password="gomer")
 ## privileged key!
@@ -60,9 +60,10 @@ class Identify(object):
         query_params = web.input(name=None,hex=None,callback="callback")
         cb = query_params.callback
         if query_params.name and query_params.hex:
-            wnk.word_get(query_params.hex, shouldCreate="true")
+            h = query_params.hex
+            wnk.word_get(h.upper(), shouldCreate="true")
             headers =  { "api_key": KEY }
-            tags = wnk._do_http(urllib.quote("/word.json/{0}/tags".format(query_params.hex)), headers)
+            tags = wnk._do_http(urllib.quote("/word.json/{0}/tags".format(h.upper())), headers)
             tags = [ t['name'] for t in json.loads(tags) ]
         if session.get("identifying", False):
             l = session.get("hexen").split(",")
@@ -91,9 +92,9 @@ def tag_word(word, code):
     conn = httplib.HTTPConnection("api.wordnik.com")
     
     headers = { "api_key": KEY, "auth_token": token }
-    uuid = hashlib.md5(time.time().__str__()).hexdigest()
-    uri = "/v4/word.json/{0}/tag?".format(word)
-    tag = urllib.quote("color:{0}_{1}".format(code, uuid))
+    uuid = "".join(random.sample(alnum, 4))
+    uri = "/v4/word.json/{0}/tag?".format(urllib.quote(word))
+    tag = urllib.quote("color:#{0}_{1}".format(code.upper(), uuid))
     uri += "tags={0}&username=wordrainbow".format(tag,uuid)
     
     conn.request("POST", uri, None, headers)
