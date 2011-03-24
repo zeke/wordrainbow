@@ -13,6 +13,7 @@ Discoveries
 * The documentation for word.{format}/{word}/tag is lacking
 * can't tag a word more than once with the same tag (?)
 * can't get tags for a word
+* Robin's API needs to support PUT, POST, DELETE, etc.
 
 Credentials
 -----------
