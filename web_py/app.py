@@ -92,7 +92,7 @@ def tag_word(word, code):
     
     headers = { "api_key": KEY, "auth_token": token }
     uuid = "".join(random.sample(alnum, 4))
-    uri = "/v4/word.json/{0}/tag?".format(word)
+    uri = "/v4/word.json/{0}/tag?".format(urllib.quote(word))
     tag = urllib.quote("color:#{0}_{1}".format(code, uuid))
     uri += "tags={0}&username=wordrainbow".format(tag,uuid)
     
