@@ -93,7 +93,7 @@ def tag_word(word, code):
     headers = { "api_key": KEY, "auth_token": token }
     uuid = hashlib.md5(time.time().__str__()).hexdigest()
     uri = "/v4/word.json/{0}/tag?".format(word)
-    tag = urllib.quote("color:#{0}_{1}".format(code, uuid))
+    tag = urllib.quote("color:{0}_{1}".format(code, uuid))
     uri += "tags={0}&username=wordrainbow".format(tag,uuid)
     
     conn.request("POST", uri, None, headers)
