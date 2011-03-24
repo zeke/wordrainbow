@@ -177,6 +177,10 @@ Mixer = {
 	updateSwatch: function() {
 		var color = $.Color( [Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'HSV' ).toHEX();
 		$('li.mix form input.hex').val(color);
+		$('li.mix form input.submit').css({
+			backgroundColor: color,
+			color: (Mixer.lightness < 500 ? 'white' : 'black')
+		});
 		$('li.mix div.swatch').css({backgroundColor:color});
 	},
 	
