@@ -22,7 +22,11 @@
         Identify
       </li>
       <li class="mix">
-        <div class="swatch"></div>
+        <form>
+          <input class="hex" name="hex" type="hidden">
+          <input class="name" name="name" type="text">
+          <input class="submit" type="submit" value="Save">
+        </form>
         <ul id="slider_labels">
           <li>Hue</li>
           <li>Saturation</li>
@@ -33,11 +37,6 @@
           <li id="saturation_slider"></li>
           <li id="lightness_slider"></li>
         </ul>
-        <form>
-          <input class="hex" name="hex" type="hidden">
-          <input class="name" name="name" type="text">
-          <input class="submit" type="submit" value="Save">
-        </form>
       </li>
       <li class="visualize">
         Visualize

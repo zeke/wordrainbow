@@ -102,7 +102,7 @@ body ul#panels > li.home a.logo {
 body ul#panels > li.mix {
   background: none;
 }
-body ul#panels > li.mix div.swatch {
+body ul#panels > li.mix input.name {
   position: absolute;
   width: 100px;
   height: 100px;
