@@ -176,7 +176,7 @@ Mixer = {
 		var color = $.Color( [Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'HSV' ).toHEX();
 		
 		// Update form inputs
-		$('li.mix form input.hex').val(color);
+		$('li.mix form input.hex').val(color.replace('#', ''));
 		$('li.mix form input.submit').css({
 			backgroundColor: color,
 			color: (Mixer.lightness < 500 ? 'white' : 'black')
@@ -187,8 +187,8 @@ Mixer = {
 	},
 	
 	submit: function(first_time) {
-		// When getting the first mix suggestion, we don't pass any vars
 		var q = first_time ? '' : $('li.mix form').serialize();
+		log(q);
 		var url = '/mix?' + q + '&callback=?';
 		
 		$.getJSON(url, function(data) {

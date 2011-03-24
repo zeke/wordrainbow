@@ -18,6 +18,7 @@ Wishlist
 * Improve transition/visualization between player submissions
 * Design and build "Visualize" section
 * Look into physics
+* Replace or fix the sliders.. they're not working right
 
 * Remove sensitive stuff from the app so it can be open-sourced
 
