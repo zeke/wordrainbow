@@ -5,8 +5,7 @@ $(document).ready(function(){
 	panel_padding = 5;
 	panels = new Array('home', 'identify', 'mix', 'visualize');
 	current_panel = panels[0];
-	
-	swatch_height = 300;
+	current_color_name = null;
 		
 	adaptToScale();	
 	setTimeout("adaptToScale()", 250);
@@ -75,15 +74,8 @@ function adaptToScale() {
 
 		// MIX
 		// **********************************************************
-		$('li.mix div.swatch').css({
-			left: panel_padding,
-			top: panel_padding,
-			height: swatch_height,
-			width: panel_width - (panel_padding*2)
-		});
-
 		$('li.mix ul#sliders').css({
-			top: $('li.mix div.swatch').outerHeight(),
+			top: $('li.mix input.name').outerHeight(),
 			left: 0
 		});
 		
@@ -92,10 +84,16 @@ function adaptToScale() {
 			left: 0
 		});
 		
-		$('li.mix form').css({
-			top: $('li.mix div.swatch').outerHeight(),
-			right: 0
-		});
+		// $('li.mix form').css({
+		// 	top: 0,
+		// 	left: 0
+		// });
+		// 
+		// $('li.mix form input.name').css({
+		// 	left: panel_padding,
+		// 	top: panel_padding,
+		// 	width: panel_width - (panel_padding*2)
+		// });
 		
 }
 
@@ -146,21 +144,21 @@ Mixer = {
 		$("#hue_slider").slider({
 			max:1000,
 			value: 500,
-			slide: function(event, ui) { Mixer.hue = ui.value; Mixer.updateSwatch(); }
+			slide: function(event, ui) { Mixer.hue = ui.value; Mixer.refreshAppearance(); }
 		});
 		$("#saturation_slider").slider({
 			max:1000,			
 			value: 500,
-			slide: function(event, ui) { Mixer.saturation = ui.value; Mixer.updateSwatch(); }
+			slide: function(event, ui) { Mixer.saturation = ui.value; Mixer.refreshAppearance(); }
 		});
 		$("#lightness_slider").slider({
 			max:1000,
 			value: 500,
-			slide: function(event, ui) { Mixer.lightness = ui.value; Mixer.updateSwatch(); }
+			slide: function(event, ui) { Mixer.lightness = ui.value; Mixer.refreshAppearance(); }
 		});
 		
 		// Initialization
-		Mixer.updateSwatch();
+		Mixer.refreshAppearance();
 		
 		// Fetch initial suggestion
 		Mixer.submit(true);
@@ -174,14 +172,18 @@ Mixer = {
 	},
 	
 	// Called at runtime and each time a slider is moved
-	updateSwatch: function() {
+	refreshAppearance: function() {
 		var color = $.Color( [Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'HSV' ).toHEX();
+		
+		// Update form inputs
 		$('li.mix form input.hex').val(color);
 		$('li.mix form input.submit').css({
 			backgroundColor: color,
 			color: (Mixer.lightness < 500 ? 'white' : 'black')
 		});
-		$('li.mix div.swatch').css({backgroundColor:color});
+		
+		$('li.mix form input.name').val(current_color_name);
+		$('li.mix form input.name').css({color:color});
 	},
 	
 	submit: function(first_time) {
@@ -195,10 +197,10 @@ Mixer = {
 	},
 	
 	handleResponse: function(response) {
-		log(response);
-		$('li.mix form input.name').val(response.nextName);
+		log("Mixer.handleResponse => " + response);
+		current_color_name = response.nextName;
 		$('li.mix form input.hex').val('');
-		log("response.tagsForQuery: " + response.tagsForQuery);
+		Mixer.refreshAppearance();
 	}
 	
 };
