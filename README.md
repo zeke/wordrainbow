@@ -19,6 +19,7 @@ Discoveries
 * The documentation for word.{format}/{word}/tag is lacking
 * can't tag a word more than once with the same tag (?)
 * can't get tags for a word
+* Robin's API needs to support PUT, POST, DELETE, etc.
 
 Credentials
 -----------
@@ -27,4 +28,3 @@ repo: https://github.com/zeke/wordrainbow
 username: wordrainbow
 passowrd: gomer
 api_key: 1d3baf57f57254b5c430200e729037e9dea9d87493f3a16b4
-
