@@ -71,6 +71,7 @@ Mixer = {
 		$('ul#sliders').fadeOut();
 		$('li.mix form input.submit').fadeOut();
 		$('li.mix form a.skip').fadeOut();
+		$('li.mix form a.hint').fadeOut();
 		$('ul#slider_labels').fadeTo('normal', 0, function() {
 
 			Mixer.circles = new Array();
@@ -135,6 +136,7 @@ Mixer = {
 		$('li.mix form input.name').fadeIn();
 		$('li.mix form input.submit').fadeIn();
 		$('li.mix form a.skip').fadeIn();
+		$('li.mix form a.hint').fadeIn();
 		$('ul#sliders').fadeIn();
 		$('ul#slider_labels').fadeTo('normal', 1);
 	},
