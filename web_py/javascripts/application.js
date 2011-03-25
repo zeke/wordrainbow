@@ -8,10 +8,12 @@ $(document).ready(function(){
 		
 	adaptToScale();	
 	setTimeout("adaptToScale()", 250);
+	setTimeout("adaptToScale()", 500);
+	setTimeout("adaptToScale()", 1000);
 	setTimeout("showHome()", 300);
 	
 	Mixer.init();
-
+	Identifier.init();
 });
 
 

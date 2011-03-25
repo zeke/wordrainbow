@@ -33,7 +33,15 @@
 			
 	%li.identify
 		%h1	Identify
-		%p See a color. Give it a name. Coming soon.
+		%p What color is this?
+		
+		%div.swatch
+		
+		%form{:autocomplete => "off"}
+			%input{:name => "hex", :type => "hidden", :class => "hex"}
+			%input{:name => "name", :type => "text", :class => "name", :autocomplete => "off"}
+			%input{:type => "submit", :class => "submit", :value => "Save"}
+
 	
 	%li.visualize
 		%h1	Visualize
