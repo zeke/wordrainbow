@@ -59,7 +59,7 @@ Mixer = {
 		});
 	},
 	
-	skip: function() {
+	skipColor: function() {
 		var url = '/mix?&callback=?';
 		log('Mixer.skip: ' + url);
 		$.getJSON(url, function(data) {
@@ -70,6 +70,7 @@ Mixer = {
 	showResults: function() {
 		$('ul#sliders').fadeOut();
 		$('li.mix form input.submit').fadeOut();
+		$('li.mix form a.skip').fadeOut();
 		$('ul#slider_labels').fadeTo('normal', 0, function() {
 
 			Mixer.circles = new Array();
@@ -133,12 +134,14 @@ Mixer = {
 		Mixer.updateNameInput();
 		$('li.mix form input.name').fadeIn();
 		$('li.mix form input.submit').fadeIn();
+		$('li.mix form a.skip').fadeIn();
 		$('ul#sliders').fadeIn();
-		$('ul#slider_labels').fadeIn();
+		$('ul#slider_labels').fadeTo('normal', 1);
 	},
 	
 	updateNameInput: function() {
 		$('li.mix form input.name').val(Mixer.current_color_name);
+		$('li.mix form a.hint').attr('href', "http://wordnik.com/words/"+Mixer.current_color_name);
 	},
 
 	handleResponse: function(response) {

@@ -230,16 +230,13 @@ body ul#panels > li.mix form input.submit {
   cursor: pointer;
   outline: none;
 }
-body ul#panels > li.mix form a.skip {
+body ul#panels > li.mix form a.skip, body ul#panels > li.mix form a.hint {
   font-family: "Helvetica Neue", Helvetica, Arial;
   font-size: 1em;
   margin: 0;
   padding: 0 0 0 10px;
   color: #444444;
   text-decoration: none;
-}
-body ul#panels > li.mix form a.skip:hover {
-  text-decoration: underline;
 }
 
 ul#footer {
@@ -268,7 +265,7 @@ ul#footer li:last-child {
   border-right: none;
 }
 ul#footer li {
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: #666666;
 }
 ul#footer li a {

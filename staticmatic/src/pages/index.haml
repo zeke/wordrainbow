@@ -16,7 +16,8 @@
 			%input{:name => "hex", :type => "hidden", :class => "hex"}
 			%input{:name => "name", :type => "text", :class => "name", :autocomplete => "off"}
 			%input{:type => "submit", :class => "submit", :value => "Save"}
-			= link_to_function("Skip", "Mixer.skip();", :class => "skip")
+			= link_to_function("Skip", "Mixer.skipColor();", :class => "skip")
+			= link("Hint", "http://wordnik.com/word/red", :class => "hint", :target => "_blank")
 			
 		= link_to_function("Next", "Mixer.nextColor();", :class => "next_color", :style => "display:none")
 
