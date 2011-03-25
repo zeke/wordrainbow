@@ -7,6 +7,13 @@ a rake task to copy static files from /staticmatic/site to /web_py/
 
 	./staticmatic/rake build
 
+
+Bugs
+----
+
+* MIME type headers; see http://cl.ly/5Vdy
+* 
+
 Wishlist
 --------
 
@@ -20,6 +27,8 @@ Wishlist
 * Look into physics
 * Replace or fix the sliders.. they're not working right
 
+* Add option to skip
+* Don't allow saving unless color has been changed
 * Remove sensitive stuff from the app so it can be open-sourced
 
 Discoveries

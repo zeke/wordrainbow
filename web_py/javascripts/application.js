@@ -170,10 +170,17 @@ Mixer = {
 		});
 		
 	},
-	
+
 	// Called at runtime and each time a slider is moved
 	refreshAppearance: function() {
-		var color = $.Color( [Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'HSV' ).toHEX();
+
+		// Convert color from HSL to hex
+		// var color = $.Color( [Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'HSL' ).toHEX();
+		var color = $.colors([Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'array3Normalized', "HSL").toString('hex');
+		// var color = "#FFFFFF";
+		
+		log("HSL: " + Mixer.hue + ", " + Mixer.saturation + ", " + Mixer.lightness);
+		log("hex: " + color);
 		
 		// Update form inputs
 		$('li.mix form input.hex').val(color.replace('#', ''));
@@ -185,7 +192,7 @@ Mixer = {
 		$('li.mix form input.name').val(current_color_name);
 		$('li.mix form input.name').css({color:color});
 	},
-	
+
 	submit: function(first_time) {
 		var q = first_time ? '' : $('li.mix form').serialize();
 		log(q);
@@ -195,14 +202,14 @@ Mixer = {
 			Mixer.handleResponse(data);
 		});
 	},
-	
+
 	handleResponse: function(response) {
 		log("Mixer.handleResponse => " + response);
 		current_color_name = response.nextName;
 		$('li.mix form input.hex').val('');
 		Mixer.refreshAppearance();
 	}
-	
+
 };
 
 // Logging function that accounts for browsers that don't have window.console
