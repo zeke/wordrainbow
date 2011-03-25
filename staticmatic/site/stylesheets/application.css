@@ -246,7 +246,6 @@ body ul#panels > li.identify div.swatch {
   -ms-border-radius: 5px;
   -khtml-border-radius: 5px;
   border-radius: 5px;
-  border: 3px solid white;
 }
 body ul#panels > li.visualize {
   background: none;
