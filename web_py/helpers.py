@@ -20,13 +20,11 @@ def create_hexen():
     random.shuffle(hexlist)
     return hexlist
     
-def get_color_tags(s):
-    try:
-        j = json.loads(s)
-        tags = []
-        for item in j:
-            if item['name'].startswith("color:#"):
-                tags.append(re.sub("_.*", "", item['name']).replace("color:", ""))
-        return tags
-    except:
-        return []
+def get_color_tags(l):
+    tags = []
+    for item in l:
+        if item.startswith("color:"):
+            s = re.sub("_.*", "", item).replace("color:", "")
+            tags.append(s.replace("#", ""))
+    return tags
+    
