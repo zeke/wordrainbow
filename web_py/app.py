@@ -12,7 +12,7 @@ urls = (
     '/identify',    'Identify',
     '/visualize',   'Visualize',
     '/play',        'Play',
-    '/(.*)',        'Index',
+    '/',            'Index',
 )
 
 alnum = map(chr, range(97, 123)) + [str(n) for n in range(0,10)]
@@ -132,7 +132,23 @@ def tag_word(word, tag):
     
 class Visualize(object):
     def GET(self):
-        user_data = web.input()
+        web.header("Access-Control-Allow-Origin", "*")
+        query_params = web.input(name=None,hex=None,callback="callback")
+        colorname    = query_params.name
+        colorhex     = query_params.hex
+        cb           = query_params.callback
+        
+        if colorname:
+            tags = get_color_tags(get_all_tags(colorname))
+        elif colorhex:
+            h = "#" + colorhex.upper()
+            tags = get_color_tags(get_all_tags(h))
+        else:
+            tags = []
+        
+        return "{0}({1})".format(cb, json.dumps( { "tags": tags } ))
+        
+        
 
 class Game(object):
     
@@ -188,13 +204,9 @@ class Game(object):
         return (colorname, colorhex, cb)
 
 class Index(object):
-    def GET(self, f):
-        if not f:
-            f = "index.html"
-        try:
-            return open(f).read()
-        except:
-            return "Sorry, can't find that page"
+    def GET(self):
+        return render.index()
+
 class count(object):
     def GET(self, name):
         session.count += 1
@@ -205,6 +217,7 @@ class reset(object):
         session.kill()
         return "Resettttted, yo!"
 
+render = web.template.render('templates/')
 app     = web.application(urls, globals())
 session = web.session.Session(app, web.session.DiskStore('sessions'), initializer={'count': 0})
 
