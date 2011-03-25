@@ -1,26 +1,24 @@
 %div#logo= link_to_function("word<span>rainbow</span>", "Panel.switchTo('home')")
 
 %ul#nav
-	%li.identify= link_to_function("Identify.", "Panel.switchTo('identify')", :class => 'identify')
 	%li.mix= link_to_function("Mix.", "Panel.switchTo('mix')", :class => 'mix')
+	%li.identify= link_to_function("Identify.", "Panel.switchTo('identify')", :class => 'identify')
 	%li.visualize= link_to_function("Visualize.", "Panel.switchTo('visualize')", :class => 'visualize')
 		
 %ul#panels
 	
 	%li.home
-		= link_to_function(img('logo.png'), "Panel.switchTo('identify')", :class => "logo")
-
-	%li.identify
-
-	
-		Identify
-	
+		= link_to_function(img('logo.png'), "Panel.switchTo('mix')", :class => "logo")
+		
 	%li.mix
 	
-		%form
+		%form{:autocomplete => "off"}
 			%input{:name => "hex", :type => "hidden", :class => "hex"}
-			%input{:name => "name", :type => "text", :class => "name"}
+			%input{:name => "name", :type => "text", :class => "name", :autocomplete => "off"}
 			%input{:type => "submit", :class => "submit", :value => "Save"}
+			= link_to_function("Skip", "Mixer.skip();", :class => "skip")
+			
+		= link_to_function("Next", "Mixer.nextColor();", :class => "next_color", :style => "display:none")
 
 		%ul#slider_labels
 			%li Hue
@@ -32,9 +30,15 @@
 			%li#saturation_slider
 			%li#lightness_slider
 			
+	%li.identify
+		%h1	Identify
+		%p See a color. Give it a name. Coming soon.
 	
 	%li.visualize
-		Visualize
+		%h1	Visualize
+		%p Choose a name. See how others have mixed it. Coming soon.
+		%p Choose a color. Find names near it. Coming soon.
+
 		
 %ul#footer
 	%li

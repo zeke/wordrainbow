@@ -3,9 +3,8 @@ $(document).ready(function(){
 	panel_width = 800;
 	panel_height = 400;
 	panel_padding = 5;
-	panels = new Array('home', 'identify', 'mix', 'visualize');
+	panels = new Array('home', 'mix', 'identify', 'visualize');
 	current_panel = panels[0];
-	current_color_name = null;
 		
 	adaptToScale();	
 	setTimeout("adaptToScale()", 250);
@@ -79,6 +78,12 @@ function adaptToScale() {
 			left: 0
 		});
 		
+		$('li.mix a.next_color').css({
+			top: $('li.mix input.name').outerHeight(),
+			left: 0
+		});
+
+		
 		$('li.mix ul#slider_labels').css({
 			top: $('li.mix ul#sliders').position().top + $('li.mix ul#sliders').outerHeight(),
 			left: 0
@@ -135,82 +140,7 @@ Panel = {
 	}
 };
 
-Mixer = {
-	hue: 500,
-	saturation: 500,
-	lightness: 500,
-	
-	init: function() {
-		$("#hue_slider").slider({
-			max:1000,
-			value: 500,
-			slide: function(event, ui) { Mixer.hue = ui.value; Mixer.refreshAppearance(); }
-		});
-		$("#saturation_slider").slider({
-			max:1000,			
-			value: 500,
-			slide: function(event, ui) { Mixer.saturation = ui.value; Mixer.refreshAppearance(); }
-		});
-		$("#lightness_slider").slider({
-			max:1000,
-			value: 500,
-			slide: function(event, ui) { Mixer.lightness = ui.value; Mixer.refreshAppearance(); }
-		});
-		
-		// Initialization
-		Mixer.refreshAppearance();
-		
-		// Fetch initial suggestion
-		Mixer.submit(true);
-		
-		// Define form submission behavior
-		$("li.mix form").submit(function(){
-			Mixer.submit();
-			return false;
-		});
-		
-	},
 
-	// Called at runtime and each time a slider is moved
-	refreshAppearance: function() {
-
-		// Convert color from HSL to hex
-		// var color = $.Color( [Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'HSL' ).toHEX();
-		var color = $.colors([Mixer.hue/1000, Mixer.saturation/1000, Mixer.lightness/1000], 'array3Normalized', "HSL").toString('hex');
-		// var color = "#FFFFFF";
-		
-		log("HSL: " + Mixer.hue + ", " + Mixer.saturation + ", " + Mixer.lightness);
-		log("hex: " + color);
-		
-		// Update form inputs
-		$('li.mix form input.hex').val(color.replace('#', ''));
-		$('li.mix form input.submit').css({
-			backgroundColor: color,
-			color: (Mixer.lightness < 500 ? 'white' : 'black')
-		});
-		
-		$('li.mix form input.name').val(current_color_name);
-		$('li.mix form input.name').css({color:color});
-	},
-
-	submit: function(first_time) {
-		var q = first_time ? '' : $('li.mix form').serialize();
-		log(q);
-		var url = '/mix?' + q + '&callback=?';
-		
-		$.getJSON(url, function(data) {
-			Mixer.handleResponse(data);
-		});
-	},
-
-	handleResponse: function(response) {
-		log("Mixer.handleResponse => " + response);
-		current_color_name = response.nextName;
-		$('li.mix form input.hex').val('');
-		Mixer.refreshAppearance();
-	}
-
-};
 
 // Logging function that accounts for browsers that don't have window.console
 function log(m) {

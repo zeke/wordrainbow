@@ -1,6 +1,6 @@
 @import "compass/css3"
 
-$panel_width: 760px
+$panel_width: 800px
 $panel_height: 360px
 
 @mixin no_float
@@ -104,10 +104,21 @@ body
 			height: $panel_height
 			background-color: white
 			@include border-radius(5px)
-			padding: 20px
 			h1
-				color: black
+				@include fonty
+				font-weight: bold
+				color: white
 				font-size: 3em
+				margin-top: 30px
+			p	
+				@include fonty
+				font-weight: bold
+				color: #666
+				font-size: 1.4em
+			
+			&.identify, &.visualize
+				background: none
+			
 			&.home
 				visibility: hidden
 				background: none
@@ -117,15 +128,24 @@ body
 					
 			&.mix
 				background: none
+				a.next_color
+					position: absolute
+					color: white
+					@include fonty
+					font-weight: bold
+					font-size: 1.3em
+					text-decoration: none
+					padding: 0 0 0 5px
 				ul#slider_labels
 					@include horizontal_list
 					position: absolute
 					margin: 0
 					padding: 0 0 0 10px
 					li
-						color: #999
+						color: #CCC
 						border: none
 						width: 120px
+						
 				ul#sliders
 					@include no_float
 					position: absolute
@@ -178,7 +198,14 @@ body
 						background-color: #333
 						border: none
 						cursor: pointer
-						
+						outline: none
+					a.skip
+						@include fonty
+						font-size: 1em
+						margin: 0
+						padding: 0 0 0 10px
+						color: #444
+						@include underline_on_hover_only						
 						
 
 				
