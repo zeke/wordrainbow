@@ -2,10 +2,10 @@
 <html>
   <head>
     <title>word rainbow dot com</title>
-    <link href="stylesheets/blueprint_screen.css" media="all" rel="stylesheet" type="text/css">
+    <link href="static/stylesheets/blueprint_screen.css" media="all" rel="stylesheet" type="text/css">
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/smoothness/jquery-ui.css" media="all" rel="stylesheet" type="text/css">
-    <link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css">
-    <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script><script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js" type="text/javascript"></script><script language="javascript" src="javascripts/jquery.colors.bundle.min.js" type="text/javascript"></script><script language="javascript" src="javascripts/app.mixer.js" type="text/javascript"></script><script language="javascript" src="javascripts/app.identifier.js" type="text/javascript"></script><script language="javascript" src="javascripts/raphael-min.js" type="text/javascript"></script><script language="javascript" src="javascripts/application.js" type="text/javascript"></script>
+    <link href="static/stylesheets/application.css" media="all" rel="stylesheet" type="text/css">
+    <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script><script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/jquery.colors.bundle.min.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/app.mixer.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/app.identifier.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/raphael-min.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/application.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/app.visualizer.js" type="text/javascript"></script>
   </head>
   <body>
     <div id="logo"><a href="#" onclick="javascript:Panel.switchTo('home');return false;">word<span>rainbow</span></a></div>
@@ -16,7 +16,7 @@
     </ul>
     <ul id="panels">
       <li class="home">
-        <a class="logo" href="#" onclick="javascript:Panel.switchTo('mix');return false;"><img alt="Logo" src="images/logo.png"></a>
+        <a class="logo" href="#" onclick="javascript:Panel.switchTo('mix');return false;"><img src='static/images/logo.png'></a>
       </li>
       <li class="mix">
         <form autocomplete="off">
@@ -52,6 +52,8 @@
         <h1>Visualize</h1>
         <p>Choose a name. See how others have mixed it. Coming soon.</p>
         <p>Choose a color. Find names near it. Coming soon.</p>
+        <ul class="names"></ul>
+        <ul class="codes"></ul>
       </li>
     </ul>
     <ul id="footer">

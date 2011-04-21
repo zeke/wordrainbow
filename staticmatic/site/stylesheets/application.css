@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Helvetica Neue", Helvetica, Arial;
   background: black url("../images/bg.gif") repeat;
@@ -249,6 +250,19 @@ body ul#panels > li.identify div.swatch {
 }
 body ul#panels > li.visualize {
   background: none;
+}
+body ul#panels > li.visualize ul.names {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0;
+}
+body ul#panels > li.visualize ul.names li {
+  color: white;
+}
+body ul#panels > li.visualize ul.codes {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0;
 }
 
 ul#footer {
