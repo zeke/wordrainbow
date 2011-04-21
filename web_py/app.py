@@ -146,7 +146,10 @@ class Visualize(object):
         else:
             tags = []
         
-        return "{0}({1})".format(cb, json.dumps( { "tags": tags } ))
+        data = { "hexen": hexen,
+                 "colors": all_colors }
+        
+        return "{0}({1})".format(cb, json.dumps( data ))
         
         
 
