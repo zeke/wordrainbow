@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>word rainbow dot com</title>
+    <link href="static/stylesheets/blueprint_screen.css" media="all" rel="stylesheet" type="text/css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/smoothness/jquery-ui.css" media="all" rel="stylesheet" type="text/css">
+    <link href="static/stylesheets/application.css" media="all" rel="stylesheet" type="text/css">
+    <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script><script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/jquery.colors.bundle.min.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/app.mixer.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/app.identifier.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/raphael-min.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/application.js" type="text/javascript"></script><script language="javascript" src="static/javascripts/app.visualizer.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="logo"><a href="#" onclick="javascript:Panel.switchTo('home');return false;">word<span>rainbow</span></a></div>
+    <ul id="nav">
+      <li class="mix"><a class="mix" href="#" onclick="javascript:Panel.switchTo('mix');return false;">Mix.</a></li>
+      <li class="identify"><a class="identify" href="#" onclick="javascript:Panel.switchTo('identify');return false;">Identify.</a></li>
+      <li class="visualize"><a class="visualize" href="#" onclick="javascript:Panel.switchTo('visualize');return false;">Visualize.</a></li>
+    </ul>
+    <ul id="panels">
+      <li class="home">
+        <a class="logo" href="#" onclick="javascript:Panel.switchTo('mix');return false;"><img src='static/images/logo.png'></a>
+      </li>
+      <li class="mix">
+        <form autocomplete="off">
+          <input class="hex" name="hex" type="hidden">
+          <input autocomplete="off" class="name" name="name" type="text">
+          <input class="submit" type="submit" value="Save">
+          <a class="skip" href="#" onclick="javascript:Mixer.skipColor();;return false;">Skip</a>
+          <a class="hint" href="http://wordnik.com/word/red" target="_blank">Hint</a>
+        </form>
+        <a class="next_color" href="#" onclick="javascript:Mixer.nextColor();;return false;" style="display:none">Next</a>
+        <ul id="slider_labels">
+          <li>Hue</li>
+          <li>Saturation</li>
+          <li>Lightness</li>
+        </ul>
+        <ul id="sliders">
+          <li id="hue_slider"></li>
+          <li id="saturation_slider"></li>
+          <li id="lightness_slider"></li>
+        </ul>
+      </li>
+      <li class="identify">
+        <h1>Identify</h1>
+        <p>What color is this?</p>
+        <div class="swatch"></div>
+        <form autocomplete="off">
+          <input class="hex" name="hex" type="hidden">
+          <input autocomplete="off" class="name" name="name" type="text">
+          <input class="submit" type="submit" value="Save">
+        </form>
+      </li>
+      <li class="visualize">
+        <h1>Visualize</h1>
+        <p>Choose a name. See how others have mixed it. Coming soon.</p>
+        <p>Choose a color. Find names near it. Coming soon.</p>
+        <ul class="names"></ul>
+        <ul class="codes"></ul>
+      </li>
+    </ul>
+    <ul id="footer">
+      <li>
+        Powered by
+        <a href="http://twitter.com/wordnik">@wordnik</a>
+        and the
+        <a href="http://twitter.com/wordnikapi">@wordnikapi</a>
+      </li>
+    </ul>
+  </body>
+</html>
