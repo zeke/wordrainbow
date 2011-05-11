@@ -39,5 +39,5 @@ Credentials
 
 repo: https://github.com/zeke/wordrainbow
 username: wordrainbow
-passowrd: gomer
-api_key: 1d3baf57f57254b5c430200e729037e9dea9d87493f3a16b4
+passowrd: g....
+api_key: 1d3ba...
